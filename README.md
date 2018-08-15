@@ -1,9 +1,15 @@
 
+* [Problems](#data-structures)
+  * [Form a Palindrome](Form%20a%20Palindrome.playground)
+  * [Longest Palindromic Substring](Longest%20Palindromic%20Substring.playground)
+  * [Reverse Linked List for Groups](Reverse%20Linked%20List%20for%20Groups.playground)
+  * [Atoi](atoi.playground)
 * [Data Structures](#data-structures)
-  * [What Are B-Trees?](#what-are-b-trees?)
 * [iOS Frameworks](#ios-frameworks)
-  * [How could you setup Live Rendering ?](#how-could-you-setup-live-rendering-?)
-  * [a relative link](Form%20a%20Palindrome.playground)
+* [iOS Core](#ios-core)
+  * [Common](#common)
+  * [Objective-C](#objective-c)
+  * [Swift](#swift)
 
 # Data Structures
 
