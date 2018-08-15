@@ -1,6 +1,6 @@
 
-* [Data Structures](#Data-Structures)
-  * [Live Rendering in Storyboards](#how-could-you-setup-live-rendering)
+* [Data Structures](#data-structures)
+  * [What are SQLite limits](#what-are-sqlite-limits)
   * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
   * [Autolayout formula](#formula-of-autolayout)
   * [Size Classes](#size-classes)
