@@ -1,3 +1,11 @@
+
+* [Data Structures](#Data-Structures)
+  * [Live Rendering in Storyboards](#how-could-you-setup-live-rendering)
+  * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
+  * [Autolayout formula](#formula-of-autolayout)
+  * [Size Classes](#size-classes)
+  * [Intrinsic Content Size](#intrinsic-content-size)
+
 # Data Structures
 
 ### What Are B-Trees?
@@ -93,7 +101,7 @@ Dynamic Dispatch is the process of selecting which implementation
 of a polymorphic operation that’s a method or a function to call at run time. This means, that when we wanna invoke our methods like object method. (Swift does not default to dynamic dispatch)
 
 ### What’s Code Coverage ?
-Code coverage is a metric that helps us to measure the value of our unit tests.
+It is a metric used to measure the percentage of source code covered when tests run.
 
 ### What’s Completion Handler ?
 Completion handlers are super convenient when our app is making an API call, and we need to do something when that task is done, like updating the UI to show the data from the API call. We’ll see completion handlers in Apple’s APIs like dataTaskWithRequest and they can be pretty handy in your own code.
