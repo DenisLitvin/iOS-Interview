@@ -1,10 +1,6 @@
 
 * [Data Structures](#data-structures)
-  * [What are SQLite limits](#what-are-sqlite-limits)
-  * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
-  * [Autolayout formula](#formula-of-autolayout)
-  * [Size Classes](#size-classes)
-  * [Intrinsic Content Size](#intrinsic-content-size)
+  * [What are SQLite limits](#explain-mvc)
 
 # Data Structures
 
