@@ -116,6 +116,44 @@ HEAD: Identical to GET but only sends back the headers and none of the actual da
 
 **JSON** stands for JavaScript Object Notation; it provides a straightforward, human-readable and portable mechanism for transporting data between two systems. Apple supplies the JSONSerialization class to help convert your objects in memory to JSON and vice-versa.
 
+## What is the difference between LLVM and Clang?
+Clang is the front end of LLVM tool chain ( “clang” C Language Family Frontend for LLVM ). Every Compiler has three parts .
+1. Front end ( lexical analysis, parsing )
+2. Optimizer ( Optimizing abstract syntax tree )
+3. Back end ( machine code generation )
+
+Front end ( Clang ) takes the source code and generates abstract syntax tree ( LLVM IR ).
+
+### What is Class ?
+A class is meant to define a functionality of an object. In this way, a class is like a blueprint of an object.
+
+### What is Object?
+Entity that representable in code, holds memory address.
+
+Underlying entity exposes interface and functionality.
+
+### What is the difference between property and instance variable?
+A property is an instance variable with associated getter and setter methods. Property syntax creates all three components implicitly.
+A calculated (readonly) property is a getter method with no underlying instance variable.
+
+### Explain difference between SDK and Framework ?
+SDK is a more broad set of software development tools. This set is used for creation of applications.
+
+Framework is basically a platform which is used for developing software applications. It provides the necessary foundation on which the programs can be developed for a specific platform. SDK and Framework complement each other, and SDKs are available for frameworks.
+
+### What is Downcasting ?
+When we’re casting an object to another type in Objective-C, it’s pretty simple since there’s only one way to do it. In Swift, though, there are two ways to cast — one that’s safe and one that’s not .
+
+* In swift:
+
+  * as used for upcasting and type casting to bridged type
+
+  * as? used for safe casting, return nil if failed
+
+  * as! used to force casting, crash if failed. should only be used when we know the downcast will succeed.
+
+* In Objc: `(Object *)variable`
+
 ### What is bitcode ?
 Bitcode refers to to the type of code: “LLVM Bitcode” that is sent to iTunes Connect. This allows Apple to use certain calculations to re-optimize apps further (e.g: possibly downsize executable sizes). If Apple needs to alter your executable then they can do this without a new build being uploaded.
 
@@ -123,6 +161,42 @@ Bitcode refers to to the type of code: “LLVM Bitcode” that is sent to iTunes
 SVN relies on a centralised system for version management. It’s a central repository where working copies are generated and a network connection is required for access.
 
 Git relies on a distributed system for version management. You will have a local repository on which you can work, with a network connection only required to synchronise.
+
+### What are the most important application delegate methods a developer should handle ?
+The operating system calls specific methods within the application delegate to facilitate transitioning to and from various states. The seven most important application delegate methods a developer should handle are:
+
+- application:willFinishLaunchingWithOptions
+
+Method called when the launch process is initiated. This is the first opportunity to execute any code within the app.
+
+- application:didFinishLaunchingWithOptions
+
+Method called when the launch process is nearly complete. Since this method is called is before any of the app’s windows are displayed, it is the last opportunity to prepare the interface and make any final adjustments.
+
+- applicationDidBecomeActive
+
+Once the application has become active, the application delegate will receive a callback notification message via the method applicationDidBecomeActive.
+
+This method is also called each time the app returns to an active state from a previous switch to inactive from a resulting phone call or SMS.
+
+- applicationWillResignActive
+
+There are several conditions that will spawn the applicationWillResignActive method. Each time a temporary event, such as a phone call, happens this method gets called. It is also important to note that “quitting” an iOS app does not terminate the processes, but rather moves the app to the background.
+
+- applicationDidEnterBackground
+
+This method is called when an iOS app is running, but no longer in the foreground. In other words, the user interface is not currently being displayed. According to Apple’s UIApplicationDelegate Protocol Reference, the app has approximately five seconds to perform tasks and return. If the method does not return within five seconds, the application is terminated.
+
+- applicationWillEnterForeground
+
+This method is called as an app is preparing to move from the background to the foreground. The app, however, is not moved into an active state without the applicationDidBecomeActive method being called. This method gives a developer the opportunity to re-establish the settings of the previous running state before the app becomes active.
+
+- applicationWillTerminate
+
+This method notifies your application delegate when a termination event has been triggered. Hitting the home button no longer quits the application. Force quitting the iOS app, or shutting down the device triggers the applicationWillTerminate method. This is the opportunity to save the application configuration, settings, and user preferences.
+
+### What does code signing do?
+Signing our app allows iOS to identify who signed our app and to verify that our app hasn’t been modified since you signed it. The Signing Identity consists of a public-private key pair that Apple creates for us.
 
 ### What problems does delegation solve?
 * Avoiding tight coupling of objects
@@ -181,11 +255,11 @@ When the interface orientation changes, UIKit calls this method on the window’
 ### What is the major purposes of Frameworks?
 Frameworks have three major purposes:
 
-Code encapsulation
+- Code encapsulation
 
-Code modularity
+- Code modularity
 
-Code reuse
+- Code reuse
 
 You can share your framework with your other apps, team members, or the iOS community. When combined with Swift’s access control, frameworks help define strong, testable interfaces between code modules.
 
@@ -335,6 +409,27 @@ Keep working on the utility of the app even after launch.
 The bounds of a UIView is the rectangle, expressed as a location (x,y) and size (width,height) relative to its own coordinate system (0,0).
 The frame of a UIView is the rectangle, expressed as a location (x,y) and size (width,height) relative to the superview it is contained within.
 
+### Application States
+The iOS application states are as follows:
+
+* Not running state: The app has not been launched or was running but was terminated by the system.
+
+* Inactive state:
+
+The app is running in the foreground but is currently not receiving events. (It may be executing other code though.) An app usually stays in this state only briefly as it transitions to a different state. The only time it stays inactive for any period of time is when the user locks the screen or the system prompts the user to respond to some event (such as an incoming phone call or SMS message).
+
+- Active state:
+
+The app is running in the foreground and is receiving events. This is the normal mode for foreground apps.
+
+- Background state:
+
+The app is in the background and executing code. Most apps enter this state briefly on their way to being suspended. However, an app that requests extra execution time may remain in this state for a period of time. In addition, an app being launched directly into the background enters this state instead of the inactive state.
+
+- Suspended state:
+
+While suspended, an app remains in memory but does not execute any code. When a low-memory condition occurs, the system may purge suspended apps without notice to make more space for the foreground app.
+
 ### What is Responder Chain ?
 A ResponderChain is a hierarchy of objects that have the opportunity to respond to events received.
 
@@ -346,6 +441,9 @@ Regular expressions are special string patterns that describe how to search thro
 ### KVC — KVO
 KVC adds stands for Key-Value Coding. It’s a mechanism by which an object’s properties can be accessed using string’s at runtime rather than having to statically know the property names at development time.
 KVO stands for Key-Value Observing and allows a controller or class to observe changes to a property value. In KVO, an object can ask to be notified of any changes to a specific property, whenever that property changes value, the observer is automatically notified.
+
+### What is interface?
+Defines the functions and properties of an object that is exposed to outside
 
 ### How many different annotations available in Objective-C ?
 \_Null_unspecified, which bridges to a Swift implicitly unwrapped optional. This is the default.
@@ -501,6 +599,15 @@ Swift 4 introduces a new Codable protocol that lets us serialize and deserialize
 The Swift Package Manager will help to vastly improve the Swift ecosystem, making Swift much easier to use and deploy on platforms without Xcode such as Linux. The Swift Package Manager also addresses the problem of dependency hell that can happen when using many interdependent libraries.
 
 The Swift Package Manager only supports using the master branch. Swift Package Manager now supports packages with Swift, C, C++ and Objective-C.
+
+### How is an inout parameter different from a regular parameter?
+An Inout is passed as function parameter.
+
+Inside a function **the local copy** is modified
+
+Before function returns it takes `inout` object and sets it's value equal to that local copy
+
+So it seems like you pass parameter by reference, however it's not actually the case
 
 ### What are benefits of Guard ?
 There are two big benefits to guard. One is avoiding the pyramid of doom, as others have mentioned — lots of annoying if let statements nested inside each other moving further and further to the right. The other benefit is provide an early exit out of the function using break or using return.
