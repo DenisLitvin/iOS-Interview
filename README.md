@@ -3,7 +3,7 @@
   * [What Are B-Trees?](#what-are-b-trees?)
 * [iOS Frameworks](#ios-frameworks)
   * [How could you setup Live Rendering ?](#how-could-you-setup-live-rendering-?)
-  * [a relative link](form%20a%20palindrome.playground)
+  * [a relative link](Form%20a%20Palindrome.playground)
 
 # Data Structures
 
