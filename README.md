@@ -5,6 +5,7 @@
   * [Reverse Linked List for Groups](Reverse%20Linked%20List%20for%20Groups.playground)
   * [Atoi](atoi.playground)
   * [Water Trap](Water%20Trap.playground)
+  * [Find Shortest path in 2d matrix](2x2%20inf$20grid%20shortest%20path)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
@@ -34,6 +35,61 @@ Face landmarks, Barcode and Text Detection
 Multitasking using the new floating Dock, slide-over apps, pinned apps, and the new App Switcher
 Location Permission: A flashing blue status bar anytime an app is collecting your location data in the background. Updated locations permissions that always give the user the ability to choose only to share location while using the app.
 
+### When bounds origin will be different from 0,0?
+Let's take an example of UIScrollView: UIScrollView's bounds.origin will not be (0, 0) when its contentOffset is not (0, 0).
+
+### Unit Tests
+Tests the smallest unit of functionality, typically a method/function (e.g. given a class with a particular state, calling x method on the class should cause y to happen). Unit tests should be focussed on one particular feature (e.g., calling the pop method when the stack is empty should throw an InvalidOperationException). Everything it touches should be done in memory; this means that the test code and the code under test shouldn't:
+
+Call out into (non-trivial) collaborators
+Access the network
+
+Hit a database
+
+Use the file system
+
+Spin up a thread
+
+Any kind of dependency that is slow / hard to understand / initialise / manipulate should be stubbed / mocked / whatevered using the appropriate techniques so you can focus on what the unit of code is doing, not what its dependencies do. In short, unit tests are as simple as possible, easy to debug, reliable (due to reduced external factors), fast to execute and help to prove that the smallest building blocks of your program function as intended before they're put together. The caveat is that, although you can prove they work perfectly in isolation, the units of code may blow up when combined which brings us to ...
+
+ - Integration Tests
+
+Integration tests build on unit tests by combining the units of code and testing that the resulting combination functions correctly. This can be either the innards of one system, or combining multiple systems together to do something useful. Also, another thing that differentiates integration tests from unit tests is the environment. Integration tests can and will use threads, access the database or do whatever is required to ensure that all of the code and the different environment changes will work correctly. If you've built some serialization code and unit tested its innards without touching the disk, how do you know that it'll work when you are loading and saving to disk? Maybe you forgot to flush and dispose filestreams. Maybe your file permissions are incorrect and you've tested the innards using in memory streams. The only way to find out for sure is to test it 'for real' using an environment that is closest to production. The main advantage is that they will find bugs that unit tests can't such as wiring bugs (e.g. an instance of class A unexpectedly receives a null instance of B) and environment bugs (it runs fine on my single-CPU machine, but my colleague's 4 core machine can't pass the tests). The main disadvantage is that integration tests touch more code, are less reliable, failures are harder to diagnose and the tests are harder to maintain. Also, integration tests don't necessarily prove that a complete feature works. The user may not care about the internal details of my programs, but I do!
+
+- Functional Tests
+
+Functional tests check a particular feature for correctness by comparing the results for a given input against the specification. Functional tests don't concern themselves with intermediate results or side-effects, just the result (they don't care that after doing x, object y has state z). They are written to test part of the specification such as, "calling function Square(x) with the argument of 2 returns 4".
+
+- Acceptance Tests
+
+Acceptance testing seems to be split into two types: Standard acceptance testing involves performing tests on the full system (e.g. using your web page via a web browser) to see whether the application's functionality satisfies the specification. E.g. "clicking a zoom icon should enlarge the document view by 25%." There is no real continuum of results, just a pass or fail outcome. The advantage is that the tests are described in plain English and ensures the software, as a whole, is feature complete. The disadvantage is that you've moved another level up the testing pyramid. Acceptance tests touch mountains of code, so tracking down a failure can be tricky. Also, in agile software development, user acceptance testing involves creating tests to mirror the user stories created by/for the software's customer during development. If the tests pass, it means the software should meet the customer's requirements and the stories can be considered complete. An acceptance test suite is basically an executable specification written in a domain specific language that describes the tests in the language used by the users of the system.
+
+### File owner
+Two points to be remembered:
+
+The File owner is the object that loads the nib, i.e. that object which receives the message loadNibNamed: or initWithNibName:.
+If you want to access any objects in the nib after loading it, you can set an outlet in the file owner.
+So you created a fancy view with lots of buttons, subviews etc . If you want to modify any of these views / objects any time after loading the nib FROM the loading object (usually a view or window controller) you set outlets for these objects to the file owner. It's that simple.
+
+This is the reason why by default all View Controllers or Window Controllers act as file owners, and also have an outlet to the main window or view object in the nib file: because duh, if you're controlling something you'll definitely need to have an outlet to it so that you can send messages to it.
+
+The reason it's called file owner and given a special place, is because unlike the other objects in the nib, the file owner is external to the nib and is not part of it. In fact, it only becomes available when the nib is loaded. So the file owner is a stand-in or proxy for the actual object which will later load the nib.
+
+### You’ve just been alerted that your new app is prone to crashing. What do you do?
+
+This classic interview question is designed to see how well your prospective programmer can solve problems. What you’re looking for is a general methodology for isolating a bug, and their ability to troubleshoot issues like sudden crashes or freezing. In general, when something goes wrong within an app, a standard approach might look something like this:
+
+Determine the iOS version and make or model of the device.
+
+Gather enough information to reproduce the issue.
+
+Acquire device logs, if possible.
+
+Once you have an idea as to the nature of the issue, acquire tooling or create a unit test and begin debugging. A great answer would include all of the above, with specific examples of debugging tools like Buglife or ViewMonitor, and a firm grasp of software debugging theory—knowledge on what to do with compile time errors, run-time errors, and logical errors. The one answer you don’t want to hear is the haphazard approach—visually scanning through hundreds of lines of code until the error is found. When it comes to debugging software, a methodical approach is must.
+
+### What are layer objects and what do they represent?
+Layer objects are data objects which represent visual content. Layer objects are used by views to render their content. Custom layer objects can also be added to the interface to implement complex animations and other types of sophisticated visual effects.
+
 ### What makes React Native special for iOS?
 (Unlike PhoneGap) with React Native your application logic is written and runs in JavaScript, whereas your application UI is fully native; therefore you have none of the compromises typically associated with HTML5 UI.
 Additionally (unlike Titanium), React introduces a novel, radical and highly functional approach to constructing user interfaces. In brief, the application UI is simply expressed as a function of the current application state.
@@ -58,7 +114,37 @@ The Thread Sanitizer is an all new runtime tool in Xcode 8 that alerts you to th
 The Memory Graph Debugger is also brand new to Xcode 8. It provides visualization of your app’s memory graph at a point in time and flags leaks in the Issue navigator.
 
 ### How could you setup Live Rendering ?
-The attribute @IBDesignable lets Interface Builder perform live updates on a particular view.
+
+With @IBInspectable and @IBDesignable, it’s possible to build a custom interface for configuring your custom controls and have them rendered in real-time while designing your project.
+
+@IBInspectable properties provide new access to an old feature: user-defined runtime attributes. Currently accessible from the identity inspector, these attributes have been available since before Interface Builder was integrated into Xcode. They provide a powerful mechanism for configuring any key-value coded property of an instance in a NIB, XIB, or storyboard.
+
+Built-in Cocoa types can also be extended to have inspectable properties beyond the ones already in Interface Builder’s attribute inspector. If you like rounded corners, you’ll love this UIView extension:
+
+```swift
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
+```
+
+The attribute @IBDesignable lets Interface Builder perform live updates on a particular view. This allows seeing how your custom views will appear without building and running your app after each change.
+
+To mark a custom view as IBDesignable, prefix the class name with @IBDesignable (or the IB_DESIGNABLE macro in Objective-C). Your initializers, layout, and drawing methods will be used to render your custom view right on the canvas:
+
+```swift
+@IBDesignable
+class MyCustomView: UIView {
+    ...
+}
+```
 
 ### What is TVMLKit ?
 TVMLKit is the glue between TVML, JavaScript, and your native tvOS application.
@@ -541,7 +627,11 @@ Asynchronous execution: If you execute the closure asynchronously on a dispatch 
 Storage: Storing the closure to a global variable, property, or any other bit of storage that lives on past the function call means the closure has also escaped.
 
 ### Explain generics ?
-Generics create code that does not get specific about underlying data types. Don’t catch this article. Generics allow us to know what type it is going to contain. Generics also provides optimization for our code.
+Generics create code that does not get specific about underlying data types.
+
+Generics allow us to know what type it is going to contain.
+
+Generics provide code reusability.
 
 ### Explain lazy ?
 An initial value of the lazy stored properties is calculated only when the property is called for the first time. There are situations when the lazy properties come very handy to developers.
@@ -593,7 +683,7 @@ When we defined a variable as optional, then to get the value from this variable
 ### Explain Swift Standard Library Protocol ?
 There are a few different protocol. Equatable protocol, that governs how we can distinguish between two instances of the same type. That means we can analyze. If we have a specific value is in our array. The comparable protocol, to compare two instances of the same type and sequence protocol: prefix(while:) and drop(while:) [SE-0045].
 
-Swift 4 introduces a new Codable protocol that lets us serialize and deserialize custom data types without writing any special code.
+Swift 4 introduces a new `Codable` protocol that lets us serialize and deserialize custom data types without writing any special code.
 
 ### Explain Swift Package Manager
 The Swift Package Manager will help to vastly improve the Swift ecosystem, making Swift much easier to use and deploy on platforms without Xcode such as Linux. The Swift Package Manager also addresses the problem of dependency hell that can happen when using many interdependent libraries.
