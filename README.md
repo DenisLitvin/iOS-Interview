@@ -5,7 +5,7 @@
   * [Reverse Linked List for Groups](Reverse%20Linked%20List%20for%20Groups.playground)
   * [Atoi](atoi.playground)
   * [Water Trap](Water%20Trap.playground)
-  * [Find Shortest path in 2d matrix](2x2%20inf$20grid%20shortest%20path)
+  * [Find Shortest path in 2d matrix](2d%20inf%20grid%20shortest%20path.playground)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
