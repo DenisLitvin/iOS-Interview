@@ -65,6 +65,7 @@ Functional tests check a particular feature for correctness by comparing the res
 Acceptance testing seems to be split into two types: Standard acceptance testing involves performing tests on the full system (e.g. using your web page via a web browser) to see whether the application's functionality satisfies the specification. E.g. "clicking a zoom icon should enlarge the document view by 25%." There is no real continuum of results, just a pass or fail outcome. The advantage is that the tests are described in plain English and ensures the software, as a whole, is feature complete. The disadvantage is that you've moved another level up the testing pyramid. Acceptance tests touch mountains of code, so tracking down a failure can be tricky. Also, in agile software development, user acceptance testing involves creating tests to mirror the user stories created by/for the software's customer during development. If the tests pass, it means the software should meet the customer's requirements and the stories can be considered complete. An acceptance test suite is basically an executable specification written in a domain specific language that describes the tests in the language used by the users of the system.
 
 ### File owner
+
 Two points to be remembered:
 
 The File owner is the object that loads the nib, i.e. that object which receives the message loadNibNamed: or initWithNibName:.
@@ -88,12 +89,15 @@ Acquire device logs, if possible.
 Once you have an idea as to the nature of the issue, acquire tooling or create a unit test and begin debugging. A great answer would include all of the above, with specific examples of debugging tools like Buglife or ViewMonitor, and a firm grasp of software debugging theory—knowledge on what to do with compile time errors, run-time errors, and logical errors. The one answer you don’t want to hear is the haphazard approach—visually scanning through hundreds of lines of code until the error is found. When it comes to debugging software, a methodical approach is must.
 
 ### What are layer objects and what do they represent?
+
 Layer objects are data objects which represent visual content. Layer objects are used by views to render their content. Custom layer objects can also be added to the interface to implement complex animations and other types of sophisticated visual effects.
 
 ### What makes React Native special for iOS?
+
 (Unlike PhoneGap) with React Native your application logic is written and runs in JavaScript, whereas your application UI is fully native; therefore you have none of the compromises typically associated with HTML5 UI.
 Additionally (unlike Titanium), React introduces a novel, radical and highly functional approach to constructing user interfaces. In brief, the application UI is simply expressed as a function of the current application state.
-What is NSFetchRequest ?
+
+### What is NSFetchRequest ?
 
 NSFetchRequest is the class responsible for fetching from Core Data. Fetch requests are both powerful and flexible. You can use fetch requests to fetch a set of objects meeting the provided criteria, individual values and more.
 
