@@ -5,7 +5,7 @@
   * [Reverse Linked List for Groups](Reverse%20Linked%20List%20for%20Groups.playground)
   * [Atoi](atoi.playground)
   * [Water Trap](Water%20Trap.playground)
-  * [Find Shortest path in 2d matrix](2d%20inf%20grid%20shortest%20path.playground)
+  * [Find Shortest path in 2d matrix](2d%20inf%20grid%20shortest%20path.playground/Contents)
   * [Min Common Interval](Min%20Common%20Interval.playground)
   * [Squared Int Sorted](Squared%20Int%20Sorted.playground)
   * [N Node From End Linked List](N%20Node%20From%20End%20Linked%20List.playground)
