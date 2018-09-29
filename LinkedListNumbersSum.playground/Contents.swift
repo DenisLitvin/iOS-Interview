@@ -46,7 +46,11 @@ return 124 (99 + 25) as:
 
 //time O(n)
 //space O(n)
-func sum(left: Node?, right: Node?, additionalValue: Int) -> Node? {
+func sum(left: Node, right: Node) -> Node {
+    return sumHelper(left: left, right: right, additionalValue: 0)!
+}
+
+func sumHelper(left: Node?, right: Node?, additionalValue: Int) -> Node? {
     guard left != nil
         || right != nil
         || additionalValue != 0
@@ -56,7 +60,7 @@ func sum(left: Node?, right: Node?, additionalValue: Int) -> Node? {
     let rValue = right?.value ?? 0
     let result = lValue + rValue + additionalValue
     let resultNode = Node(result % 10)
-    resultNode.next = sum(left: left?.next, right: right?.next, additionalValue: result / 10)
+    resultNode.next = sumHelper(left: left?.next, right: right?.next, additionalValue: result / 10)
     
     return resultNode
 }
@@ -66,4 +70,4 @@ left ~> Node(2) ~> Node(3) //329
 
 let right = Node(1)
 right ~> Node(2) ~> Node(10) //1021
-sum(left: left, right: right, additionalValue: 0) //1350
+sum(left: left, right: right) //1350
