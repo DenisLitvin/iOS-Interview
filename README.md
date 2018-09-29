@@ -21,11 +21,78 @@
 
 # Data Structures
 
+### Variations on arrays
+- Array2D. A two-dimensional array with fixed dimensions. Useful for board games.
+- Bit Set. A fixed-size sequence of n bits.
+- Fixed Size Array. When you know beforehand how large your data will be, it might be more efficient to use an old-fashioned array with a fixed size.
+- Ordered Array. An array that is always sorted.
+- Rootish Array Stack. A space and time efficient variation on Swift arrays.
+
+### Queues
+- Stack. Last-in, first-out!
+- Queue. First-in, first-out!
+- Deque. A double-ended queue.
+- Priority Queue. A queue where the most important element is always at the front.
+- Ring Buffer. Also known as a circular buffer. An array of a certain size that conceptually wraps around back to the beginning.
+
+### Lists
+- Linked List. A sequence of data items connected through links. Covers both singly and doubly linked lists.
+- Skip-List. Skip List is a probabilistic data-structure with same logarithmic time bound and efficiency as AVL/ or Red-Black tree and provides a clever compromise to efficiently support search and update operations.
+
+### Trees
+- Tree. A general-purpose tree structure.
+- Binary Tree. A tree where each node has at most two children.
+- Binary Search Tree (BST). A binary tree that orders its nodes in a way that allows for fast queries.
+- Red-Black Tree. A self balancing binary search tree.
+- Splay Tree. A self balancing binary search tree that enables fast retrieval of recently updated elements.
+- Threaded Binary Tree. A binary tree that maintains a few extra variables for cheap and fast in-order traversals.
+- Segment Tree. Can quickly compute a function over a portion of an array.
+- Lazy Propagation
+- kd-Tree
+- Sparse Table. Another take on quickly computing a function over a portion of an array, but this time we'll make it even quicker!.
+- Heap. A binary tree stored in an array, so it doesn't use pointers. Makes a great priority queue.
+- Fibonacci Heap
+- Trie. A special type of tree used to store associative data structures.
+- B-Tree. A self-balancing search tree, in which nodes can have more than two children.
+- QuadTree. A tree with 4 children.
+- Octree. A tree with 8 children.
+
+### Hashing
+- Hash Table. Allows you to store and retrieve objects by a key. This is how the dictionary type is usually implemented.
+- Hash Functions
+
+### Sets
+- Bloom Filter. A constant-memory data structure that probabilistically tests whether an element is in a set.
+- Hash Set. A set implemented using a hash table.
+- Multiset. A set where the number of times an element is added matters. (Also known as a bag.)
+- Ordered Set. A set where the order of items matters.
+
+### Graphs
+- Graph
+- Breadth-First Search (BFS)
+- Depth-First Search (DFS)
+- Shortest Path on an unweighted tree
+- Single-Source Shortest Paths
+- Minimum Spanning Tree on an unweighted tree
+- Minimum Spanning Tree
+- All-Pairs Shortest Paths
+- Dijkstra's shortest path algorithm
+
+
 ### What Are B-Trees?
 B-trees are search trees that provide an ordered key-value store with excellent performance characteristics. In principle, each node maintains a sorted array of its own elements, and another array for its children.
 
 
 # iOS Frameworks
+
+### What is CoreData ?
+Core data is an object graph manager which also has the ability to persist object graphs to the persistent store on a disk. An object graph is like a map of all the different model objects in a typical model view controller iOS application. CoreData has also integration with Core Spotlight.
+
+But Core Data is not thread safe, meaning that, if you load a managed object on one thread, you can’t pass it to another thread and use it safely. This becomes an issue when we want to start introducing threading for performance, so we have two choices.
+
+The first is to keep everything on the main thread, which just means it’s single threaded. Or the second, means making changes on background threads and passing managed object IDs and then loading those objects again on the main thread, but that would mean that you’re on the main thread, which puts us right back where we started. Both of these kind of ruin the point of using threading within Core Data and they can add a lot of complexity to the data layer.
+
+There’s also another option for that and it’s to convert the managed object to a plain old Swift object, or a POSO.
 
 ### What is iOS 11 SDK Features for Developers ?
 New MapKit Markers
@@ -195,6 +262,161 @@ Visit events — monitor place Visit events which are enters/exits from a pl
 # iOS Core
 
 ## Common
+
+### What is Remote Notifications attacment’s limits ?
+We can be sent with video or image with push notification. But maximum payload is 4kb.
+
+### What is three triggers for a local notification ?
+Location, Calendar, and Time Interval. A Location notification fires when the GPS on your phone is at a location or geographic region. Calendar trigger is based on calendar data broken into date components. Time Interval is a count of seconds until the timer goes off.
+
+### How could we get device token ?
+There are two steps to get device token. First, we must show the user’s permission screen, after we can register for remote notifications. If these steps go well, the system will provide device token. If we uninstall or reinstall the app, the device token would change.
+
+### What is Encapsulation ?
+Encapsulation is an object-oriented design principles and hides the internal states and functionality of objects. That means objects keep their state information private.
+
+### What is big-o notation ?
+An algorithm is an impression method used to determine the working time for an input N size. The big-o notation grade is expressed by the highest value. And the big-o notation is finding the answer with the question of O(n). Here is a cheat sheet and swift algorithm club. For example;
+
+For Loops big-o notation is O(N). Because For Loops work n times.
+Variables (var number:Int = 4) big-o notation is O(1).
+
+### What Is Dependency Management?
+If we want to integrate open source project, add a framework from a third party project, or even reuse code across our own projects, dependency management helps us to manage these relationships. Check this out
+
+### What is UML Class Diagrams?
+UML Class Diagram is a set of rules and notations for the specification of a software system, managed and created by the Object Management Group.
+
+### Explain throw
+We are telling the compiler that it can throw errors by using the throws keyword. Before we can throw an error, we need to make a list of all the possible errors you want to throw.
+
+### What is GraphQL ?
+GraphQL is trying to solve creating a query interface for the clients at the application level. Apollo iOS is a strongly-typed, caching GraphQL client for iOS, written in Swift.
+
+### Explain Common features of Protocols & superclasses
+implementation reuse
+provide points for customization
+interface reuse
+supporting modular design via dynamic dispatch on reused interfaces
+
+### What is Continuous Integration ?
+Continuous Integration allows us to get early feedback when something is going wrong during application development. There are a lot of continuous integration tools available.
+
+**Self hosted server**
+- Xcode Server
+- Jenkins
+- TeamCity
+- Cloud solutions
+- TravisCI
+- Bitrise
+- Buddybuild
+
+### What is the difference Delegates and Callbacks ?
+The difference between delegates and callbacks is that with delegates, the NetworkService is telling the delegate “There is something changed.” With callbacks, the delegate is observing the NetworkService.
+
+### Explain Linked List
+Linked List basically consist of the structures we named the Node. These nodes basically have two things. The first one is the one we want to keep. (we do not have to hold single data, we can keep as much information as we want), and the other is the address information of the other node.
+
+Disadvantages of Linked Lists, at the beginning, there is extra space usage. Because the Linked List have an address information in addition to the existing information. This means more space usage.
+
+### Do you know Back End development ?
+Depends. I have experienced PARSE and I am awarded FBStart. I decided to learn pure back end. You have two choices. Either you can learn node.js + express.js and mongodb. OR, you can learn Vapor or Kitura.
+
+Don’t you like or use Firebase?
+
+Firebase doesn't have a path for macOS X developers.
+If you want to learn Firebase, please just follow one month of Firebase Google Group.
+
+### Explain AutoLayout
+AutoLayout provides a flexible and powerful layout system that describes how views and the UI controls calculates the size and position in the hierarchy.
+
+### What is the disadvantage to hard-coding log statements ?
+First, when you start to log. This starts to accumulate. It may not seem like a lot, but every minute adds up. By the end of a project, those stray minutes will equal to hours.
+
+Second, Each time we add one to the code base, we take a risk of injecting new bugs into our code.
+
+### What is Pointer ?
+A pointer is a direct reference to a memory address. Whereas a variable acts as a transparent container for a value, pointers remove a layer of abstraction and let you see how that value is stored.
+
+### Explain Core ML Pros and Cons
+**Pros of Core ML:**
+Really easy to add into your app.
+Not just for deep learning: also does logistic regression, decision trees, and other “classic” machine learning models.
+Comes with a handy converter tool that supports several different training packages (Keras, Caffe, scikit-learn, and others).
+
+**Cons:**
+Core ML only supports a limited number of model types. If you trained a model that does something Core ML does not support, then you cannot use Core ML.
+The conversion tools currently support only a few training packages. A notable omission is TensorFlow, arguably the most popular machine learning tool out there. You can write your own converters, but this isn’t a job for a novice. (The reason TensorFlow is not supported is that it is a low-level package for making general computational graphs, while Core ML works at a much higher level of abstraction.)
+No flexibility, little control. The Core ML API is very basic, it only lets you load a model and run it. There is no way to add custom code to your models.
+iOS 11 and later only.
+
+### What is pair programming?
+Pair programming is a tool to share information with junior developers. Junior and senior developer sitting side-by-side this is the best way for the junior to learn from senior developers.
+
+Check out Martin Fowler on “Pair Programming Misconceptions”, WikiHow on Pair Programming
+
+### Explain blocks
+Blocks are a way of defining a single task or unit of behavior without having to write an entire Objective-C class. they are anonymous functions.
+
+### What is Keychain ?
+Keychain is an API for persisting data securly in iOS App. There is a good library - Locksmith
+
+### What is the biggest changes in UserNotifications ?
+We can add audio, video and images.
+We can create custom interfaces for notifications.
+We can manage notifications with interfaces in the notification center.
+New Notification extensions allow us to manage remote notification payloads before they’re delivered.
+
+### Explain to using Class and Inheritance benefits
+With Overriding provides a mechanism for customization
+Reuse implementation
+Subclassing provides reuse interface
+Modularity
+Subclasses provide dynamic dispatch
+
+### Explain Priority Inversion and Priority Inheritance.
+If high priority thread waits for low priority thread, this is called Priority Inversion. if low priority thread temporarily inherit the priority of the highest priority thread, this is called Priority Inheritance.
+
+### Where do we use Dependency Injection ?
+We use a storyboard or xib in our iOS app, then we created IBOutlets. IBOutlet is a property related to a view. These are injected into the view controller when it is instantiated, which is essentially a form of Dependency Injection.
+
+There are forms of dependency injection: constructor injection, property injection and method injection.
+
+### What is RGR ( Red — Green — Refactor ) ?
+Red, Green and Refactor are stages of the TDD (Test Driven Development).
+
+Red: Write a small amount of test code usually no more than seven lines of code and watch it fail.
+Green: Write a small amount of production code. Again, usually no more than seven lines of code and make your test pass.
+Refactor: Tests are passing, you can make changes without worrying. Clean up your code. There are great workshop notes here.
+
+### Please explain SOAP and REST Basics differences ?
+Both of them helps us access Web services. SOAP relies exclusively on XML to provide messaging services. SOAP is definitely the heavyweight choice for Web service access. Originally developed by Microsoft.
+
+REST ( Representational State Transfer ) provides a lighter weight alternative. Instead of using XML to make a request, REST relies on a simple URL in many cases. REST can use four different HTTP 1.1 verbs (GET, POST, PUT, and DELETE) to perform tasks.
+
+### What kind of JSONSerialization have ReadingOptions ?
+mutableContainers Specifies that arrays and dictionaries are created as variables objects, not constants.
+mutableLeaves Specifies that leaf strings in the JSON object graph are created as instances of variable String.
+allowFragments Specifies that the parser should allow top-level objects that are not an instance of Array or Dictionary.
+
+### Please explain types of notifications.
+There are two type of notifications: Remote and Local. Remote notification requires connection to a server. Local notifications don’t require server connection. Local notifications happen on device.
+
+### What is you favorite Visualize Chart library ?
+Charts has support iOS,tvOS,OSX The Apple side of the cross platform MPAndroidChart.
+
+Core Plot is a 2D plotting framework for macOS, iOS, and tvOS
+
+TEAChart has iOS support
+
+### When is a good time for dependency injection in our projects?
+There is a few guidelines that you can follow.
+
+Rule 1. Is Testability important to us? If so, then it is essential to identify external dependencies within the class that you wish to test. Once dependencies can be injected we can easily replace real services for mock ones to make it easy to testing easy.
+
+Rules 2. Complex classes have complex dependencies, include application-level logic, or access external resources such as the disk or the network. Most of the classes in your application will be complex, including almost any controller object and most model objects. The easiest way to get started is to pick a complex class in your application and look for places where you initialize other complex objects within that class.
+
+Rules 3. If an object is creating instances of other objects that are shared dependencies within other objects then it is a good candidate for a dependency injection.
 
 ### REST, HTTP, JSON — What’s that?
 HTTP is the application protocol, or set of rules, web sites use to transfer data from the web server to client. The client (your web browser or app) use to indicate the desired action:
@@ -529,10 +751,69 @@ While suspended, an app remains in memory but does not execute any code. When a 
 ### What is Responder Chain ?
 A ResponderChain is a hierarchy of objects that have the opportunity to respond to events received.
 
-## What is Regular expressions ?
+### What kind of order functions can we use on collection types ?
+map(_:): Returns an array of results after transforming each element in the sequence using the provided closure.
+filter(_:): Returns an array of elements that satisfy the provided closure predicate.
+reduce(_:_:): Returns a single value by combining each element in the sequence using the provided closure.
+sorted(by:): Returns an array of the elements in the sequence sorted based on the provided closure predicate.
+To see all methods available from Sequence
+
+### What allows you to combine your commits ?
+last commit - `git rebase -i HEAD~1` 
+combine - `git squash`
+
+### What is the difference ANY and ANYOBJECT ?
+According to Apple’s Swift documentation:
+
+Any can represent an instance of any type at all, including function types and optional types.
+AnyObject can represent an instance of any class type.
+
+### What is Regular expressions ?
 Regular expressions are special string patterns that describe how to search through a string.
 
 ## Objective-C
+
+### What is a property? How can you create one? What is the benefits to use properties?
+@property, (auto)synthesize; 
+getter/setter method (also send KVO notifications). 
+Hides the iVars (safety and flexibility)
+
+### Method visibility
+private/public – no protected. anyone can call a private
+
+### How to check an optional protocol method existence on an object?
+Call `respondsToSelector`
+
+### + and - methods
+class vs instance methods
+
+### How to add a method to a class (extend) without the source of the class and without recompiling the class?
+Categories
+
+### Difference between extensions () and (named) in categories implementations?
+`()`  should be only one and for main interface
+`(name)`  for categories
+
+### Benefits of extension category?
+private property declaration, compile time method check.
+
+### Can you re-declare a property in subclass or extension?
+YES. If you declare a property in one class as readonly, you can redeclare it as readwrite in a class extension, in a protocol, or in a subclass.
+
+### Limitations and problems with categories?
+Cannot override an existing method and call it in the extension method
+
+### What are formal and informal protocols?
+Formal are the real protocols, informal are categories on NSObject (with optional methods)
+
+### Property modifiers and the meaning
+nonatomic/atomic, assign/retain/copy/readonly vs strong/weak/unsafe_unretained, getter=, setter=
+
+### How to declare protected-like methods (accessible only for some dedicated classes)?
+Separate header file with (named) category, and include it in other class
+
+### Explain Selectors in ObjC
+In Objective-C, a selector is the name used to select a method to execute on an object, or, more succinctly, the unique identifier that replaces the name when the source code is compiled. A selector is represented by the special Objective-C type called SEL .
 
 ### KVC — KVO
 KVC adds stands for Key-Value Coding. It’s a mechanism by which an object’s properties can be accessed using string’s at runtime rather than having to statically know the property names at development time.
@@ -575,6 +856,48 @@ for more details check this out
 Because enums aren’t objects, so we don’t specify strong or weak here. (C Enum)
 
 ## Swift
+
+### What is Protocol Extensions?
+We can adopt protocols using extensions as well as on the original type declaration. This allows you to add protocols to types you don’t necessarily own.
+
+### Why do we use availability attributes ?
+Apple wants to support one system version back, meaning that we should support iOS9 or iOS8. [Availability Attributes](https://docs.swift.org/swift-book/ReferenceManual/Attributes.html) lets us to support previous version iOS.
+
+###  What’s the difference optional between nil and .None?
+There is no difference. Optional.None (.None for short) is the correct way of initializing an optional variable lacking a value, whereas nil is just syntactic sugar for .None.
+
+###  How do you follow up clean code for this project ?
+I follow style guide and coding conventions for Swift projects of [Github](https://github.com/raywenderlich/swift-style-guide) and SwiftLint.
+
+### How many different ways to pass data in Swift ?
+There are many different ways such as Delegate, KVO, Segue, and NSNotification, Target-Action, Callbacks.
+
+### When do you use optional chaining vs. if let or guard ?
+We use optional chaining when we do not really care if the operation fails; otherwise, we use if let or guard. Optional chaining lets us run code only if our optional has a value.
+
+Using the question mark operator like this is called optional chaining. Apple’s documentation explains it like this:
+
+Optional chaining is a process for querying and calling properties, methods, and subscripts on an optional that might currently be nil. If the optional contains a value, the property, method, or subscript call succeeds; if the optional is nil, the property, method, or subscript call returns nil. Multiple queries can be chained together, and the entire chain fails gracefully if any link in the chain is nil.
+
+### Could you explain Associatedtype ?
+If you want to create Generic Protocol we can use associatedtype. For more details check this out.
+
+### What is the difference Filter and Map Function ?
+Map, we pass in a function that returns a value for each element in an array. The return value of this function represents what an element becomes in our new array.
+
+Filter, we pass in a function that returns either true or false for each element. If the function that we pass returns true for a given element, then the element is included in the final array.
+
+### What is DispatchGroup ?
+DispatchGroup allows for aggregate synchronization of work. We can use them to submit multiple different work items and track when they all complete, even though they might run on different queues. This behavior can be helpful when progress can’t be made until all of the specified tasks are complete. 
+
+### Explain subscripts ?
+Classes, structures, and enumerations can define subscripts, which are shortcuts for accessing the member elements of a collection, list, or sequence.
+
+### What is Nil Coalescing & Ternary Operator ?
+nil coalescing - `??`
+teranry - `? :`
+It is an easily return an unwrapped optional, or a default value. If we do not have value, we can set zero or default value.
+
 
 ### What is the Swift main advantage ?
 To mention some of the main advantages of Swift:
