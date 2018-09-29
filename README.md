@@ -10,6 +10,7 @@
   * [Squared Int Sorted](Squared%20Int%20Sorted.playground)
   * [N Node From End Linked List](N%20Node%20From%20End%20Linked%20List.playground)
   * [Sort Linked Matrix](Sort%20Linked%20Matrix.playground)
+  * [Max Length Zero Sum](MaxLengthZeroSum.playground)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
