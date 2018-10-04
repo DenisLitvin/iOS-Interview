@@ -12,6 +12,7 @@
   * [Sort Linked Matrix](Sort%20Linked%20Matrix.playground/Contents.swift)
   * [Max Length Zero Sum](MaxLengthZeroSum.playground/Contents.swift)
   * [Linked List Numbers Sum](LinkedListNumbersSum.playground/Contents.swift)
+  * [Deep Copy Linked List](DeepCopyLinkedList.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
@@ -759,7 +760,7 @@ sorted(by:): Returns an array of the elements in the sequence sorted based on th
 To see all methods available from Sequence
 
 ### What allows you to combine your commits ?
-last commit - `git rebase -i HEAD~1` 
+last commit - `git rebase -i HEAD~1`
 combine - `git squash`
 
 ### What is the difference ANY and ANYOBJECT ?
@@ -774,8 +775,8 @@ Regular expressions are special string patterns that describe how to search thro
 ## Objective-C
 
 ### What is a property? How can you create one? What is the benefits to use properties?
-@property, (auto)synthesize; 
-getter/setter method (also send KVO notifications). 
+@property, (auto)synthesize;
+getter/setter method (also send KVO notifications).
 Hides the iVars (safety and flexibility)
 
 ### Method visibility
