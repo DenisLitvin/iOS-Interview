@@ -13,6 +13,7 @@
   * [Max Length Zero Sum](MaxLengthZeroSum.playground/Contents.swift)
   * [Linked List Numbers Sum](LinkedListNumbersSum.playground/Contents.swift)
   * [Deep Copy Linked List](DeepCopyLinkedList.playground/Contents.swift)
+  * [Trade Stock Price](TradeStockPrice.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
