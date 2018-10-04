@@ -51,6 +51,7 @@ func copy(head: Node) -> Node {
     let copyHead = head.copy()
     var mapper = Dictionary<Node, Node>()
     copyHelper(head: head, copyHead: copyHead, mapper: &mapper)
+    randomHelper(head: head, copyHead: copyHead, mapper: &mapper)
     return copyHead
 }
 func copyHelper(head: Node, copyHead: Node, mapper: inout Dictionary<Node, Node>) {
@@ -59,7 +60,6 @@ func copyHelper(head: Node, copyHead: Node, mapper: inout Dictionary<Node, Node>
         copyHead.next = nextCopy
         mapper[next] = nextCopy
         copyHelper(head: next, copyHead: nextCopy, mapper: &mapper)
-        randomHelper(head: head, copyHead: copyHead, mapper: &mapper)
     }
 }
 
@@ -87,6 +87,6 @@ head ~> Node(2) ~> random3 ~> random4 ~> Node(5)
 head.random = random3
 random3.random = random4
 let copyHead = copy(head: head)
-head == copyHead //check
-head.random == copyHead.random
-copyHead.random == copyHead.next!.next! // random3
+head == copyHead //check false
+head.random == copyHead.random //check false
+copyHead.random == copyHead.next!.next! // check random3 true
