@@ -17,6 +17,7 @@
   * [Largest Rect](LargestRect.playground/Contents.swift)
   * [Tower Of Hanoi](TowerOfHanoi.playground/Contents.swift)
   * [Longest Valid Parentheses](LongestValidParentheses.playground/Contents.swift)
+  * [Calculate Health In Genoms](CalculateHelthInGenoms.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
