@@ -19,6 +19,7 @@
   * [Longest Valid Parentheses](LongestValidParentheses.playground/Contents.swift)
   * [Calculate Health In Genoms](CalculateHealthInGenoms.playground/Contents.swift)
   * [Nearest K Points](NearestKPoints.playground/Contents.swift)
+  * [Min Distance Between Words](MinDistanceBetweenWords.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
