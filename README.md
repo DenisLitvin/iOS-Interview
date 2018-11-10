@@ -21,6 +21,7 @@
   * [Nearest K Points](NearestKPoints.playground/Contents.swift)
   * [Min Distance Between Words](MinDistanceBetweenWords.playground/Contents.swift)
   * [Swap Bits](swapBits.playground/Contents.swift)
+  * [Median Of Two Arrays](MedianOf2Arrays.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
