@@ -23,6 +23,7 @@
   * [Swap Bits](Problems/swapBits.playground/Contents.swift)
   * [Median Of Two Arrays](Problems/MedianOf2Arrays.playground/Contents.swift)
   * [Number Of Squares](Problems/NumberOfSquares.playground/Contents.swift)
+  * [Swap Words In Sentence](Problems/SwapWordsInSentence.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
