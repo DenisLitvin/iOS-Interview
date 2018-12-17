@@ -25,6 +25,7 @@
   * [Number Of Squares](Problems/NumberOfSquares.playground/Contents.swift)
   * [Swap Words In Sentence](Problems/SwapWordsInSentence.playground/Contents.swift)
   * [Generate Parenteses](Problems/GenerateParenteses.playground/Contents.swift)
+  * [Bit Set](Problems/BitSet.playground/Contents.swift)
   * [Three Sum](Problems/ThreeSum.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
