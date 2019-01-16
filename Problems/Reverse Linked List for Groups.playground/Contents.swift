@@ -38,18 +38,20 @@ class Node: CustomStringConvertible{
 
 func reverse(node: Node?, k: Int) -> Node? {
     guard let node = node else { return nil }
+    var boundK = 1
     var next = node.next
     var previous = node
     node.next = nil
 
     for _ in 1 ..< k {
         if let nextUnwraped = next {
+            boundK += 1
             next = nextUnwraped.next
             nextUnwraped.next = previous
             previous = nextUnwraped
         }
         else {
-            return previous
+            return reverse(node: current, k: boundK)
         }
     }
     node.next = reverse(node: next, k: k)
