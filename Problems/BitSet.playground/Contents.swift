@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 /*
  For [1, 2, 3], all possible subsets are {1},
@@ -21,4 +21,3 @@ func bitSet(of array: [String]) {
 }
 
 bitSet(of: ["0","1","2", "3"])
-
