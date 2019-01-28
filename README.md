@@ -30,6 +30,7 @@
   * [Validate Parentheses](Problems/ValidateParentheses.playground/Contents.swift)
   * [Max Weight Pyramid](Problems/MaxWeightPyramid.playground/Contents.swift)
   * [BitSet](Problems/BitSet.playground/Contents.swift)
+  * [Brick Wall](Problems/BrickWall.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
