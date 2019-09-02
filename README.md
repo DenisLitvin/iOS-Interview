@@ -35,6 +35,7 @@
   * [Coin Change](Problems/CoinChange.playground/Contents.swift)
   * [Surrounded Regions](Problems/SurroundedRegions.playground/Contents.swift)
   * [Longest Repeating Character Replacement](Problems/LongestRepeatingCharacterReplacement.playground/Contents.swift)
+  * [Splitwize](Problems/Splitwize.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)
