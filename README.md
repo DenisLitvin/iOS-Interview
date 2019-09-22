@@ -36,6 +36,8 @@
   * [Surrounded Regions](Problems/SurroundedRegions.playground/Contents.swift)
   * [Longest Repeating Character Replacement](Problems/LongestRepeatingCharacterReplacement.playground/Contents.swift)
   * [Splitwize](Problems/Splitwize.playground/Contents.swift)
+  * [Binary Tree to Linked List](Problems/BTtoDLL.playground/Contents.swift)
+  * [Tree Bundary Traversal](Problems/TreeBundaryTraversal.playground/Contents.swift)
 * [Data Structures](#data-structures)
 * [iOS Frameworks](#ios-frameworks)
 * [iOS Core](#ios-core)

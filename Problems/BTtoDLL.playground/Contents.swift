@@ -5,7 +5,6 @@ import UIKit
  */
 class Node: CustomStringConvertible {
     var description: String {
-//        return (left != nil ? "\(left!.description)<=>" : "") + "(\(value))" + (right != nil ? "<=>\(right!.description)" : "")
         return String(value)
     }
     
